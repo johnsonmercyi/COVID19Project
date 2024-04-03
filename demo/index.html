@@ -4,15 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
+    <script src="./js/components/ui/TextField/TextField.js"></script>
     <link rel="stylesheet" href="./css/global.css">
-    <link rel="stylesheet" href="./index.css">
-    <script src="./js/components/Header/Header.js"></script>
-    <script src="./js/components/ui/Menu/Menu.js" ></script>
   </head>
   <body>
-    <nova-header></nova-header>
-    <main></main>
-    <footer>Footer</footer>
+    <input-field
+    id="firstName"
+    label="Firstname" placeholder="Enter Firstname"></input-field>
+
+    <input-field
+    label="Lastname" placeholder="Enter Lastname"></input-field>
+
+    <button>Click me</button>
 
     <script src="./js/main.js"></script>
   </body>
