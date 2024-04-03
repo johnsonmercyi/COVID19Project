@@ -8,13 +8,17 @@ class TextField extends HTMLElement {
     this._value = "";
     this._type = "text";
     this._label = "Label";
+    this._styles = "";
   }
 
   loadStyles() {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = './style.css';
+    link.href = './js/components/ui/TextField/style.css';
+    link.type = 'text/css';
     this.shadowRoot.appendChild(link);
+
+    console.log("LINK: ", link.href);
   }
 
   static get observedAttributes() {
@@ -24,8 +28,8 @@ class TextField extends HTMLElement {
   connectedCallback() {
     // This is called when the element is inserted into the DOM
 
-    this.render();
     this.loadStyles();
+    this.render();
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -38,9 +42,9 @@ class TextField extends HTMLElement {
       this._type = newValue;
     } else if (name === "label") {
       this._label = newValue;
+    } else if (name === "styles") {
+      this._styles = newValue;
     }
-
-    this.render();
   }
 
   get placeholder() {
@@ -58,9 +62,9 @@ class TextField extends HTMLElement {
   }
 
   set value(value) {
-    this.
-      _value = value;
+    this._value = value;
     this.setAttribute('value', value);
+    console.log("VALUE: ", this.getAttribute('value'));
     this.render();
   }
 
@@ -84,20 +88,44 @@ class TextField extends HTMLElement {
     this.render();
   }
 
+  get styles() {
+    return this._styles;
+  }
+
+  set styles(value) {
+    this._styles = value;
+    this.setAttribute('styles', value);
+    this.render();
+  }
+
+  onInputHandler(event) {
+    this.value = event.target.value;
+    console.log("VALUE: ", this.value);
+  }
+
+  onChangeHandler() {
+    console.log("VALUE: ", this.value);
+  }
+
   render() {
     const template = document.createElement('template');
     template.innerHTML = `
     <div class="input-field-wrapper">
       <label>${this._label}</label>
-      <input 
+      <input
         type="${this._type}"
         placeholder="${this._placeholder}" 
         value="${this._value}"/>
     </div>
   `;
 
+
     this.shadowRoot.appendChild(template.content.cloneNode(true));
-    // console.log("SHADOW 2: ", this.shadowRoot);
+
+    // Assign the event handler after rendering
+    const inputElement = this.shadowRoot.querySelector('div.input-field-wrapper input');
+    inputElement.addEventListener('input', this.onInputHandler);
+    inputElement.addEventListener('change', this.onChangeHandler);
   }
 }
 
