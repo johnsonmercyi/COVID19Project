@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(e) {
   const main = document.querySelector("main");
+  const footer = document.querySelector("footer");
 
   const menus = [
     {
@@ -30,8 +31,25 @@ document.addEventListener("DOMContentLoaded", function(e) {
     
   ];
 
+
+  const footerIcons = [
+    {
+      socialIconImg: "./img/facebook.svg",
+      socialIconLink: "#"
+    },{
+      socialIconImg: "./img/twitter.svg",
+      socialIconLink: "#"
+    },{
+      socialIconImg: "./img/youtube.svg",
+      socialIconLink: "#"
+    }
+  ];
+
   // Initialize home page
   initialize();
+  // Render footer icons
+  renderFooterIcons();
+
 
   function initialize() {
     menus.forEach(menu => {
@@ -43,5 +61,21 @@ document.addEventListener("DOMContentLoaded", function(e) {
       main.appendChild(menuNode);
     });
   }
+
+  function renderFooterIcons() {
+    // const parentDiv = document.createElement("footer"); // Create a parent div
+    // parentDiv.classList.add("footer");
+    footerIcons.forEach(footerIcon => {
+      const footerIconNode = document.createElement("nova-footer");
+      footerIconNode.classList.add("nova-footer");
+      footerIconNode.socialIconImg = footerIcon.socialIconImg;
+      footerIconNode.socialIconLink = footerIcon.socialIconLink;
+
+      footer.appendChild(footerIconNode); 
+    });
+  }
+
+
+  
 
 });
