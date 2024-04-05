@@ -58,7 +58,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
       menuNode.menuText = menu.menuText;
       menuNode.menuLink = menu.menuLink;
 
-      main.appendChild(menuNode);
+      const gridItem = document.createElement("div");
+      gridItem.classList.add("grid-item");
+
+      gridItem.appendChild(menuNode);
+
+      main.appendChild(gridItem);
     });
   }
 
