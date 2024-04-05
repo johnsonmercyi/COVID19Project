@@ -10,7 +10,7 @@ class Menu extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['menuImage', 'menuText'];
+    return ['menuImage', 'menuText', 'menuLink'];
   }
 
   connectedCallback() {
