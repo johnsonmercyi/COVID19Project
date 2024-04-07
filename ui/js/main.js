@@ -78,6 +78,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
       footer.appendChild(footerIconNode); 
     });
+    // const copyrightSpan = document.querySelector('.footer .copyright');
+    // copyrightSpan.innerHTML = 'Copyright &copy; NovaLand 2024';
   }
 
 

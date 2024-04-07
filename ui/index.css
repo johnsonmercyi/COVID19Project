@@ -46,6 +46,10 @@ main.grid-container {
   height: 2rem;
   margin: 0.5rem;
 }
+.footer .nova-footer:last-child .footer-social-icon img {
+  height: 2.6rem;
+  transform: translateY(-13%);
+}
 
 /*Devices larger than mobile phone*/
 @media (min-width: 576px) {
