@@ -59,14 +59,14 @@ class Sidebar extends HTMLElement {
     render() {
         const template = document.createElement('template');
         template.innerHTML = `
-          <div class="page-link">
+          <div class="sidebar">
             <h1>${this._header}</h1>
             <ol>
               ${
                 this._link?.length ? JSON.parse(this._link).map(link => {
                   return `
                     <li>
-                      <a href="${link.link}">${link.header}</a>
+                      <a href="${link.link}" class="sidebar-link">${link.header}</a>
                     </li>
                   `
                 }).join('') : ''
@@ -74,9 +74,7 @@ class Sidebar extends HTMLElement {
             </ol>
           </div>
         `;
-
         this.shadowRoot.appendChild(template.content.cloneNode(true));
-
     }
 
 }
