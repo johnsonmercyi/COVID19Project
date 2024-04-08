@@ -29,6 +29,56 @@ document.addEventListener("DOMContentLoaded", function(e) {
       menuText: "Travelling Guide",
       menuLink: "#"
     },
+    {
+      menuImage: "./img/vaccine.svg",
+      menuText: "Vaccine",
+      menuLink: "#"
+    }, {
+      menuImage: "./img/protect yourself.svg",
+      menuText: "Protect Yourself",
+      menuLink: "#"
+    }, {
+      menuImage: "./img/symptomsAndTest.svg",
+      menuText: "Symptom & Test",
+      menuLink: "#"
+    }, {
+      menuImage: "./img/alertAndNews.svg",
+      menuText: "Alert & News",
+      menuLink: "#"
+    }, {
+      menuImage: "./img/mentalHealthAndWellbeing.svg",
+      menuText: "Mental Health & Wellbeing",
+      menuLink: "#"
+    }, {
+      menuImage: "./img/travelGuideLines.svg",
+      menuText: "Travelling Guide",
+      menuLink: "#"
+    },
+    {
+      menuImage: "./img/vaccine.svg",
+      menuText: "Vaccine",
+      menuLink: "#"
+    }, {
+      menuImage: "./img/protect yourself.svg",
+      menuText: "Protect Yourself",
+      menuLink: "#"
+    }, {
+      menuImage: "./img/symptomsAndTest.svg",
+      menuText: "Symptom & Test",
+      menuLink: "#"
+    }, {
+      menuImage: "./img/alertAndNews.svg",
+      menuText: "Alert & News",
+      menuLink: "#"
+    }, {
+      menuImage: "./img/mentalHealthAndWellbeing.svg",
+      menuText: "Mental Health & Wellbeing",
+      menuLink: "#"
+    }, {
+      menuImage: "./img/travelGuideLines.svg",
+      menuText: "Travelling Guide",
+      menuLink: "#"
+    },
     
   ];
 
