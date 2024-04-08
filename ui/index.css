@@ -1,6 +1,6 @@
 main.grid-container {
   width : 100%;  
-  height: auto;
+  height:  auto;
 
   display        : flex;
   flex-wrap      : wrap;
