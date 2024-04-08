@@ -33,6 +33,10 @@ class Header extends HTMLElement {
     if (name === 'showHeaderText') {
       this._shouldShowText = newValue;
     }
+
+    this.shadowRoot.innerHTML = '';
+    this.loadStyles();
+    this.render();
   }
 
   get showHeaderText() {

@@ -38,6 +38,10 @@ class Menu extends HTMLElement {
     } else if (name === 'menuLink') {
       this._menuLink = newValue;
     }
+
+    this.shadowRoot.innerHTML = '';
+    this.loadStyles();
+    this.render();
   }
 
   get menuImage() {

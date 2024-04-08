@@ -1,68 +1,82 @@
 class Footer extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    this._socials = [];
+    this._copyright = '';
+  }
 
-    constructor() {
-        super();
-        this.attachShadow({mode: 'open'});
+  static get observedAttributes() {
+    return ['socials', 'copyright', 'link'];
+  }
 
-        this._socialIconImg = "";
-        this._socialIconLink = "#";  
+  get socials() {
+    return this._socials;
+  }
+
+  set socials(socials) {
+    this._socials = socials;
+    this.setAttribute('socials', socials);
+  }
+
+  get copyright() {
+    return this._copyright;
+  }
+
+  set copyright(copyright) {
+    this._copyright = copyright;
+    this.setAttribute('copyright', copyright);
+  }
+
+  connectedCallback() {
+    this.loadStyles();
+    this._socials = this.getAttribute('socials');
+    this._copyright = this.getAttribute('copyright');
+    console.log("SOCIALS: ", this._socials);
+    this.render();
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === 'socials') {
+      this._socials = newValue;
+    } else if (name === 'copyright') {
+      this._copyright = newValue;
     }
 
-    static get observedAttributes() {
-        return ['socialIconImg', 'socialIconLink'];
-    }
+    this.shadowRoot.innerHTML = '';
+    this.loadStyles();
+    this.render();
+  }
 
-    connectedCallback() {
-        this.loadStyles();
-        this._socialIconImg = this.getAttribute('socialIconImg');
-        this._socialIconLink = this.getAttribute('socialIconLink');
-        this.render();
-    }
+  loadStyles() {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = './js/components/footer/style.css';
+    link.type = 'text/css';
+    this.shadowRoot.appendChild(link);
+  }
 
-    loadStyles() {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = './js/components/footer/style.css';
-        link.type = 'text/css';
-        this.shadowRoot.appendChild(link);
-    }
-
-    attributeChangedCallback(name, oldValue, newValue) {
-        if(name === 'socialIconImg') {
-            this._socialIconImg = newValue;
-        } else if(name === 'socialIconLink') {
-            this._socialIconLink = newValue;
-        }
-    }
-
-    get socialIconImg() {
-        return this._socialIconImg;
-    }
-
-    set socialIconImg(value) {
-        this._socialIconImg = value;
-        this.setAttribute('socialIconImg', value);
-    }
-
-    get socialIconLink() {
-        return this._socialIconLink;
-    }
-
-    set socialIconLink(value) {
-        this._socialIconLink = value;
-        this.setAttribute('socialIconLink', value);
-    }
-
-    render() {
-        const template = document.createElement('template');
-        template.innerHTML = `
-            <a href="${this._socialIconLink}" class="footer-social-icon">
-                <img src="${this._socialIconImg}"/>
-            </a>
-          
-        `;
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
-    }
+  render() {
+    const template = document.createElement('template');
+    template.innerHTML = `
+      <footer class="footer">
+        <div class="social-icons">
+          ${
+            this._socials?.length ? JSON.parse(this._socials).map(icon => {
+              return `
+                <a href="${icon.link}" target="_blank">
+                  <img src=${icon.src} width=${icon.width}/>
+                </a>
+              `
+            }).join('') : ''
+          }
+        </div>
+        <span>${this._copyright}</span>
+      </footer>
+    `;
+    
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
+  }
 }
 
-customElements.define('nova-footer', Footer);
+customElements.define('nova-footer', Footer)

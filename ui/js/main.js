@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(e) {
   const main = document.querySelector("main");
   const footer = document.querySelector("footer");
+  const novaFooter = document.querySelector("nova-footer");
 
   const menus = [
     {
@@ -34,21 +35,24 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
   const footerIcons = [
     {
-      socialIconImg: "./img/facebook.svg",
-      socialIconLink: "#"
+      src: "./img/facebook.svg",
+      link: "https://www.facebook.com",
+      width: "30rem"
     },{
-      socialIconImg: "./img/twitter.svg",
-      socialIconLink: "#"
+      src: "./img/twitter.svg",
+      link: "https://www.x.com",
+      width: "30rem"
     },{
-      socialIconImg: "./img/youtube.svg",
-      socialIconLink: "#"
+      src: "./img/youtube.svg",
+      link: "https://www.youtube.com",
+      width: "45rem"
     }
   ];
 
   // Initialize home page
   initialize();
   // Render footer icons
-  renderFooterIcons();
+  // renderFooterIcons();
 
 
   function initialize() {
@@ -65,22 +69,25 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
       main.appendChild(gridItem);
     });
+
+    novaFooter.socials = JSON.stringify(footerIcons);
+    
   }
 
-  function renderFooterIcons() {
-    // const parentDiv = document.createElement("footer"); // Create a parent div
-    // parentDiv.classList.add("footer");
-    footerIcons.forEach(footerIcon => {
-      const footerIconNode = document.createElement("nova-footer");
-      footerIconNode.classList.add("nova-footer");
-      footerIconNode.socialIconImg = footerIcon.socialIconImg;
-      footerIconNode.socialIconLink = footerIcon.socialIconLink;
+  // function renderFooterIcons() {
+  //   // const parentDiv = document.createElement("footer"); // Create a parent div
+  //   // parentDiv.classList.add("footer");
+  //   footerIcons.forEach(footerIcon => {
+  //     const footerIconNode = document.createElement("nova-footer");
+  //     footerIconNode.classList.add("nova-footer");
+  //     footerIconNode.socialIconImg = footerIcon.socialIconImg;
+  //     footerIconNode.socialIconLink = footerIcon.socialIconLink;
 
-      footer.appendChild(footerIconNode); 
-    });
-    // const copyrightSpan = document.querySelector('.footer .copyright');
-    // copyrightSpan.innerHTML = 'Copyright &copy; NovaLand 2024';
-  }
+  //     footer.appendChild(footerIconNode); 
+  //   });
+  //   // const copyrightSpan = document.querySelector('.footer .copyright');
+  //   // copyrightSpan.innerHTML = 'Copyright &copy; NovaLand 2024';
+  // }
 
 
   
