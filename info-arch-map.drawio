@@ -1,0 +1,123 @@
+<mxfile host="app.diagrams.net" modified="2024-03-28T16:07:46.487Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="0B0vT-42JpciKi5UyFPd" version="24.2.0" type="device">
+  <diagram name="Page-1" id="_H8nsfjhSrg_SmuULU8i">
+    <mxGraphModel dx="1927" dy="1074" grid="1" gridSize="10" guides="1" tooltips="1" connect="0" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sV3lJVLH12BW_cj1frMF-1" value="Information Architecture Map" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="10" y="20" width="840" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sV3lJVLH12BW_cj1frMF-2" value="" style="swimlane;startSize=0;horizontal=1;containerType=tree;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="1">
+          <mxGeometry x="-120" y="110" width="980" height="860" as="geometry">
+            <mxRectangle x="-170" y="120" width="50" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sV3lJVLH12BW_cj1frMF-3" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startArrow=none;endArrow=none;rounded=0;curved=0;" edge="1" parent="sV3lJVLH12BW_cj1frMF-2" source="sV3lJVLH12BW_cj1frMF-5" target="sV3lJVLH12BW_cj1frMF-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sV3lJVLH12BW_cj1frMF-4" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startArrow=none;endArrow=none;rounded=0;curved=0;" edge="1" parent="sV3lJVLH12BW_cj1frMF-2" source="sV3lJVLH12BW_cj1frMF-5" target="sV3lJVLH12BW_cj1frMF-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="Home" treeRoot="1" id="sV3lJVLH12BW_cj1frMF-5">
+          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="sV3lJVLH12BW_cj1frMF-2">
+            <mxGeometry x="395" y="40" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="sV3lJVLH12BW_cj1frMF-6" value="Vaccine" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="sV3lJVLH12BW_cj1frMF-2">
+          <mxGeometry x="20" y="140" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sV3lJVLH12BW_cj1frMF-7" value="Protect yourself and others" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="sV3lJVLH12BW_cj1frMF-2">
+          <mxGeometry x="180" y="140" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sV3lJVLH12BW_cj1frMF-10" value="" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;elbow=vertical;startArrow=none;endArrow=none;" edge="1" source="sV3lJVLH12BW_cj1frMF-5" target="sV3lJVLH12BW_cj1frMF-11" parent="sV3lJVLH12BW_cj1frMF-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="Symptoms and Testing" treeRoot="1" id="sV3lJVLH12BW_cj1frMF-11">
+          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="sV3lJVLH12BW_cj1frMF-2">
+            <mxGeometry x="330" y="140" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="sV3lJVLH12BW_cj1frMF-12" value="" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;elbow=vertical;startArrow=none;endArrow=none;" edge="1" source="sV3lJVLH12BW_cj1frMF-5" target="sV3lJVLH12BW_cj1frMF-13" parent="sV3lJVLH12BW_cj1frMF-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="Alerts news, and&amp;nbsp; data" treeRoot="1" id="sV3lJVLH12BW_cj1frMF-13">
+          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="sV3lJVLH12BW_cj1frMF-2">
+            <mxGeometry x="500" y="140" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="sV3lJVLH12BW_cj1frMF-14" value="" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;elbow=vertical;startArrow=none;endArrow=none;" edge="1" source="sV3lJVLH12BW_cj1frMF-5" target="sV3lJVLH12BW_cj1frMF-15" parent="sV3lJVLH12BW_cj1frMF-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="Mental Health and Wellbeing" treeRoot="1" id="sV3lJVLH12BW_cj1frMF-15">
+          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="sV3lJVLH12BW_cj1frMF-2">
+            <mxGeometry x="670" y="140" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="sV3lJVLH12BW_cj1frMF-16" value="" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;elbow=vertical;startArrow=none;endArrow=none;" edge="1" source="sV3lJVLH12BW_cj1frMF-5" target="sV3lJVLH12BW_cj1frMF-17" parent="sV3lJVLH12BW_cj1frMF-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="Travel Guide" treeRoot="1" id="sV3lJVLH12BW_cj1frMF-17">
+          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="sV3lJVLH12BW_cj1frMF-2">
+            <mxGeometry x="840" y="140" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="sV3lJVLH12BW_cj1frMF-22" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startArrow=none;endArrow=none;rounded=0;curved=0;" edge="1" target="sV3lJVLH12BW_cj1frMF-23" source="sV3lJVLH12BW_cj1frMF-6" parent="sV3lJVLH12BW_cj1frMF-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="425" y="210" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sV3lJVLH12BW_cj1frMF-23" value="benefits of vaccination" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="sV3lJVLH12BW_cj1frMF-2">
+          <mxGeometry x="-10" y="240" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sV3lJVLH12BW_cj1frMF-24" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startArrow=none;endArrow=none;rounded=0;curved=0;" edge="1" target="sV3lJVLH12BW_cj1frMF-25" source="sV3lJVLH12BW_cj1frMF-6" parent="sV3lJVLH12BW_cj1frMF-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="415" y="210" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sV3lJVLH12BW_cj1frMF-25" value="Timing of vaccination" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="sV3lJVLH12BW_cj1frMF-2">
+          <mxGeometry x="110" y="240" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sV3lJVLH12BW_cj1frMF-26" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startArrow=none;endArrow=none;rounded=0;curved=0;" edge="1" target="sV3lJVLH12BW_cj1frMF-27" source="sV3lJVLH12BW_cj1frMF-6" parent="sV3lJVLH12BW_cj1frMF-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="415" y="210" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sV3lJVLH12BW_cj1frMF-27" value="vaccination after having COVID-19" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="sV3lJVLH12BW_cj1frMF-2">
+          <mxGeometry x="240" y="240" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sV3lJVLH12BW_cj1frMF-28" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startArrow=none;endArrow=none;rounded=0;curved=0;" edge="1" target="sV3lJVLH12BW_cj1frMF-29" source="sV3lJVLH12BW_cj1frMF-6" parent="sV3lJVLH12BW_cj1frMF-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="415" y="210" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sV3lJVLH12BW_cj1frMF-29" value="when to consult with your health provider" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="sV3lJVLH12BW_cj1frMF-2">
+          <mxGeometry x="370" y="240" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sV3lJVLH12BW_cj1frMF-30" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startArrow=none;endArrow=none;rounded=0;curved=0;" edge="1" target="sV3lJVLH12BW_cj1frMF-31" source="sV3lJVLH12BW_cj1frMF-6" parent="sV3lJVLH12BW_cj1frMF-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="415" y="210" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sV3lJVLH12BW_cj1frMF-31" value="Book a vaccination appointment" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="sV3lJVLH12BW_cj1frMF-2">
+          <mxGeometry x="490" y="240" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sV3lJVLH12BW_cj1frMF-32" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startArrow=none;endArrow=none;rounded=0;curved=0;" edge="1" target="sV3lJVLH12BW_cj1frMF-33" source="sV3lJVLH12BW_cj1frMF-31" parent="sV3lJVLH12BW_cj1frMF-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="30" y="310" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sV3lJVLH12BW_cj1frMF-33" value="Book appointment form" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="sV3lJVLH12BW_cj1frMF-2">
+          <mxGeometry x="570" y="340" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sV3lJVLH12BW_cj1frMF-21" value="current recommendations" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="1">
+          <mxGeometry x="-300" y="360" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sV3lJVLH12BW_cj1frMF-20" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startArrow=none;endArrow=none;rounded=0;curved=0;" edge="1" target="sV3lJVLH12BW_cj1frMF-21" source="sV3lJVLH12BW_cj1frMF-6" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="255" y="330" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

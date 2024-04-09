@@ -5,9 +5,23 @@ document.addEventListener("DOMContentLoaded", function (e) {
   const intro = document.querySelector("nova-intro");
   const sidebar = document.querySelector("nova-sidebar");
   const pageLink = document.querySelector("nova-pagelink");
+  const bodyContent = document.querySelector("nova-content");
 
   // Initialize this component
   initComponent();
+
+  const content = [
+    {
+      header: "Page Subject Header 1",
+      body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa."
+    },{
+      header: "Page Subject Header 2",
+      body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa."
+    },{
+      header: "Page Subject Header 3",
+      body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa."
+    }
+  ]
 
   function initComponent() {
     intro.textheader = `Lorem ipsum dolor sit amet, consectetuer adipiscing elit.`;
@@ -18,5 +32,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
     pageLink.header = "On This Page";
     pageLink.links = JSON.stringify(onThisPageLoad.vaccine);
+
+    bodyContent.pagesubject = JSON.stringify(content);
   }
 });
