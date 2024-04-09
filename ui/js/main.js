@@ -101,20 +101,20 @@ document.addEventListener("DOMContentLoaded", function(e) {
     }
   ];
 
-  const onThisPage = [
-    {
-      header: "Page Subject Header 1",
-      link: "#"
-    },
-    {
-      header: "Page Subject Header 2",
-      link: "#"
-    },
-    {
-      header: "Page Subject Header 3",
-      link: "#"
-    }
-  ]
+  // const onThisPage = [
+  //   {
+  //     header: "Page Subject Header 1",
+  //     link: "#"
+  //   },
+  //   {
+  //     header: "Page Subject Header 2",
+  //     link: "#"
+  //   },
+  //   {
+  //     header: "Page Subject Header 3",
+  //     link: "#"
+  //   }
+  // ]
 
   const sidebarMenu = [
     {
