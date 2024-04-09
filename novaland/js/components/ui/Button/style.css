@@ -1,0 +1,15 @@
+@import url(../../../../css/global-reset.css);
+
+button {
+  width: 15rem;
+  height: 2.5rem;
+
+  color: white;
+  font-weight: 600;
+  border: 0;
+  cursor: pointer;
+
+  transition: background-color .3s ease-in-out;
+
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.25);
+}

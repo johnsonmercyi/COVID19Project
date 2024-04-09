@@ -1,0 +1,18 @@
+@import url(../../../css/global-reset.css);
+
+.content {
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.content h2 {
+  width: 100%;
+  height: auto;
+  padding: 1rem 0;
+  font-weight: 400;
+}
