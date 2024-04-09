@@ -61,14 +61,15 @@ class PageLink extends HTMLElement {
           <div class="page-link">
             <h3>${this._header}</h3>
             <ol>
-              ${this._links?.length ? JSON.parse(this._links).map(link => {
+              ${this._links?.length ? JSON.parse(this._links).map((link, index) => {
                 return `
-                    <li>
-                      <a href="${link.link}">${link.linktext}</a>
-                    </li>
-                  `
+                  <div class="item">
+                    <span>${index+1}</span>
+                    <a href="${link.link}" class="sidebar-link">${link.linktext}</a>
+                  </div>
+                `
               }).join('') : ''
-      }
+              }
             </ol>
           </div>
         `;
