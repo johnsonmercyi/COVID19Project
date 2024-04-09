@@ -60,22 +60,21 @@ class Sidebar extends HTMLElement {
         const template = document.createElement('template');
         template.innerHTML = `
           <div class="sidebar">
-            <h1>${this._header}</h1>
-            <ol>
-              ${
-                this._link?.length ? JSON.parse(this._link).map(link => {
-                  return `
-                    <li>
-                      <a href="${link.link}" class="sidebar-link">${link.header}</a>
-                    </li>
-                  `
-                }).join('') : ''
+            <h3>${this._header}</h3>
+            ${
+              this._link?.length ? JSON.parse(this._link).map(link => {
+                return `
+                  <div class="item">
+                    <span>▶</span>
+                    <a href="${link.link}" class="sidebar-link">${link.header}</a>
+                  </div>
+                `
+              }).join('') : ''
               }
-            </ol>
           </div>
         `;
         this.shadowRoot.appendChild(template.content.cloneNode(true));
     }
 
 }
-customElements.define('sidebar', Sidebar);
+customElements.define('nova-sidebar', Sidebar);

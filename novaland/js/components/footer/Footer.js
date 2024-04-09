@@ -30,9 +30,23 @@ class Footer extends HTMLElement {
 
   connectedCallback() {
     this.loadStyles();
-    this._socials = this.getAttribute('socials');
+    this._socials = this.getAttribute('socials') || JSON.stringify([
+      {
+        src: "./img/facebook.svg",
+        link: "https://www.facebook.com",
+        width: "30rem"
+      }, {
+        src: "./img/twitter.svg",
+        link: "https://www.x.com",
+        width: "30rem"
+      }, {
+        src: "./img/youtube.svg",
+        link: "https://www.youtube.com",
+        width: "45rem"
+      }
+    ]);
+    
     this._copyright = this.getAttribute('copyright');
-    console.log("SOCIALS: ", this._socials);
     this.render();
   }
 
@@ -43,8 +57,6 @@ class Footer extends HTMLElement {
       this._copyright = newValue;
     }
 
-    this.shadowRoot.innerHTML = '';
-    this.loadStyles();
     this.render();
   }
 
@@ -57,6 +69,8 @@ class Footer extends HTMLElement {
   }
 
   render() {
+    this.shadowRoot.innerHTML = '';
+    this.loadStyles();
     const template = document.createElement('template');
     template.innerHTML = `
       <footer class="footer">

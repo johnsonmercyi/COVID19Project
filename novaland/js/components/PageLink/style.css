@@ -1,0 +1,16 @@
+@import url(../../../css/global-reset.css);
+
+.page-link {
+  width           : 100%;
+  max-width: 100%;
+  height          : auto;
+  background-color: rgb(65, 64, 66, 0.2);
+  border-radius   : 0.5rem;
+
+  display        : flex;
+  flex-direction : column;
+  justify-content: flex-start;
+  /* align-items    : flex-start; */
+
+  padding: 1rem 1rem;
+}

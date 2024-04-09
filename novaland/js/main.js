@@ -1,15 +1,13 @@
 document.addEventListener("DOMContentLoaded", function(e) {
   const main = document.querySelector("main");
   const footer = document.querySelector("footer");
-  const novaFooter = document.querySelector("nova-footer");
-  const pageLink = document.querySelector("page-link");
-  const sidebar = document.querySelector("sidebar");
+  const novaFooter = document.querySelector("nova-footer");  
 
   const menus = [
     {
       menuImage: "./img/vaccine.svg",
       menuText: "Vaccine",
-      menuLink: "#"
+      menuLink: "./vaccine.html"
     }, {
       menuImage: "./img/protect yourself.svg",
       menuText: "Protect Yourself",
@@ -33,53 +31,29 @@ document.addEventListener("DOMContentLoaded", function(e) {
     }
   ];
 
-
-  const footerIcons = [
-    {
-      src: "./img/facebook.svg",
-      link: "https://www.facebook.com",
-      width: "30rem"
-    },{
-      src: "./img/twitter.svg",
-      link: "https://www.x.com",
-      width: "30rem"
-    },{
-      src: "./img/youtube.svg",
-      link: "https://www.youtube.com",
-      width: "45rem"
-    }
-  ];
+  const onThisPageLoad = {
+    home: [
+      {}
+    ],
+    aboutus: []
+  }
 
   // const onThisPage = [
-  //   {
-  //     header: "Page Subject Header 1",
-  //     link: "#"
-  //   },
-  //   {
-  //     header: "Page Subject Header 2",
-  //     link: "#"
-  //   },
-  //   {
-  //     header: "Page Subject Header 3",
-  //     link: "#"
-  //   }
+    // {
+    //   header: "Page Subject Header 1",
+    //   link: "#"
+    // },
+    // {
+    //   header: "Page Subject Header 2",
+    //   link: "#"
+    // },
+    // {
+    //   header: "Page Subject Header 3",
+    //   link: "#"
+    // }
   // ]
 
-  const sidebarMenu = [
-    {
-      header: "SidebarMenu 1",
-      link: "#"
-    },{
-      header: "SidebarMenu 1",
-      link: "#"
-    },{
-      header: "SidebarMenu 1",
-      link: "#"
-    },{
-      header: "SidebarMenu 1",
-      link: "#"
-    }
-  ]
+  
 
   // Initialize home page
   initialize();
@@ -88,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 
   function initialize() {
+
     menus.forEach(menu => {
       const menuNode = document.createElement("nova-menu");
       menuNode.menuImage = menu.menuImage;
@@ -101,11 +76,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
       main.appendChild(gridItem);
     });
-
-    novaFooter.socials = JSON.stringify(footerIcons);
-    sidebar.link = JSON.stringify(sidebarMenu);
-
-    
   }
 
   // function renderFooterIcons() {
