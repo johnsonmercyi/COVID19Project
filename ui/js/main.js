@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
   const main = document.querySelector("main");
   const footer = document.querySelector("footer");
   const novaFooter = document.querySelector("nova-footer");
+  const pageLink = document.querySelector("page-link");
+  const sidebar = document.querySelector("sidebar");
 
   const menus = [
     {
@@ -48,6 +50,37 @@ document.addEventListener("DOMContentLoaded", function(e) {
     }
   ];
 
+  // const onThisPage = [
+  //   {
+  //     header: "Page Subject Header 1",
+  //     link: "#"
+  //   },
+  //   {
+  //     header: "Page Subject Header 2",
+  //     link: "#"
+  //   },
+  //   {
+  //     header: "Page Subject Header 3",
+  //     link: "#"
+  //   }
+  // ]
+
+  const sidebarMenu = [
+    {
+      header: "SidebarMenu 1",
+      link: "#"
+    },{
+      header: "SidebarMenu 1",
+      link: "#"
+    },{
+      header: "SidebarMenu 1",
+      link: "#"
+    },{
+      header: "SidebarMenu 1",
+      link: "#"
+    }
+  ]
+
   // Initialize home page
   initialize();
   // Render footer icons
@@ -70,6 +103,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
     });
 
     novaFooter.socials = JSON.stringify(footerIcons);
+    sidebar.link = JSON.stringify(sidebarMenu);
+
     
   }
 
@@ -88,7 +123,5 @@ document.addEventListener("DOMContentLoaded", function(e) {
   //   // copyrightSpan.innerHTML = 'Copyright &copy; NovaLand 2024';
   // }
 
-
-  
 
 });
