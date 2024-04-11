@@ -12,7 +12,7 @@
     <script src="./js/components/Sidebar/Sidebar.js"></script>
     <script src="./js/components/PageLink/PageLink.js"></script>
     <script src="./js/components/Content/Content.js"></script>
-    <script type="module" src="./js/components/ui/Button/Button.js"></script>
+    <script src="./js/components/Guideline/Guideline.js"></script>
   </head>
 
   <body>
@@ -22,22 +22,17 @@
         <nova-intro></nova-intro>
         <div class="section section-1">
           <div>
-            <nova-pagelink></nova-pagelink>
+            <!-- <nova-pagelink></nova-pagelink> -->
+            <nova-guideline></nova-guideline>
             <nova-content></nova-content>
           </div>
           <nova-sidebar></nova-sidebar>
         </div>
   
-        <div class="section section-2">
-          <div class="book-appointment-wrapper">
-            <h2>Book a Vaccination Appointment</h2>
-            <nova-button text="Book Appointment"></nova-button>
-          </div>
-        </div>
         
       </main>
     </div>
     <nova-footer copyright="Copyright &copy; NovaLand 2024"></nova-footer>
-    <script type="module" src="./js/vaccine.js"></script>
+    <script type="module" src="./js/vaccine-appointment.js"></script>
   </body>
 </html>
