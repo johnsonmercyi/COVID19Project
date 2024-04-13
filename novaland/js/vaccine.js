@@ -16,10 +16,22 @@ document.addEventListener("DOMContentLoaded", function (e) {
     sidebar.link = JSON.stringify(sidebarMenu);
     sidebar.header = "Maecenas porttitor congue";
 
+    // Automatically generate IDs and their values for the body content sections (divs)
+    pagesSubTopics.vaccine.forEach((topic, index) => {
+      const header = pagesSubTopics.vaccine[index].header;
+      pagesSubTopics.vaccine[index].id = `${String(header).toLowerCase().replaceAll(" ", "-")}`;
+    });
+
+    // Automatically generate link values using the IDs in the body content sections
+    pagesSubTopics.vaccine.forEach((obj, index) => {
+      onThisPageLoad.vaccine[index].link = `#${obj.id}`;
+    });
+
     pageLink.header = "On This Page";
     pageLink.links = JSON.stringify(onThisPageLoad.vaccine);
 
     bodyContent.subtopics = JSON.stringify(pagesSubTopics.vaccine);
+    pageLink.pagebodycontent = bodyContent;
   }
 
   // Initialize this component

@@ -40,6 +40,7 @@ class Content extends HTMLElement {
     } else if (name === "stylesheet") {
       this._stylesheet = newValue;
     }
+
     this.render();
   }
 
@@ -58,7 +59,7 @@ class Content extends HTMLElement {
       ${
         this._subtopics?.length ? JSON.parse(this._subtopics).map(page => {
           return `
-            <div class="content">
+            <div class="content" id="${page.id}">
               <h2>${page.header}</h2>
               <p>${page.body}</p>
             </div>

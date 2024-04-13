@@ -3,7 +3,7 @@ class Sidebar extends HTMLElement {
         super();
         this.attachShadow({ mode: 'open' });
         this._header = '';
-        this._link = [];
+        this._link = '[]';
     }
 
     static get observedAttributes() {
@@ -31,8 +31,8 @@ class Sidebar extends HTMLElement {
     connectedCallback() {
         // This is called when the element is inserted into the DOM
         this.loadStyles();
-        this._header = this.getAttribute('header');
-        this._link = this.getAttribute('link');
+        this._header = this.getAttribute('header') || '';
+        this._link = this.getAttribute('link') || '[]';
         this.render();
     }
 

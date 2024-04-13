@@ -4,10 +4,13 @@ class PageLink extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     this._header = '';
     this._links = [];
+    this._pageBodyContent = null;
+
+    this.anchorClickHandler = this.anchorClickHandler.bind(this);
   }
 
   static get observedAttributes() {
-    return ['header', 'links'];
+    return ['header', 'links', 'pagebodycontent'];
   }
 
   get header() {
@@ -28,11 +31,19 @@ class PageLink extends HTMLElement {
     this.setAttribute('links', value);
   }
 
+  get pagebodycontent() {
+    return this._pageBodyContent;
+  }
+
+  set pagebodycontent(value) {
+    this._pageBodyContent = value;
+  }
+
   connectedCallback() {
     // This is called when the element is inserted into the DOM
     this.loadStyles();
-    this._header = this.getAttribute('header');
-    this._links = this.getAttribute('links');
+    this._header = this.getAttribute('header') || '';
+    this._links = this.getAttribute('links') || '[]';
     this.render();
   }
 
@@ -41,7 +52,10 @@ class PageLink extends HTMLElement {
       this._header = newValue;
     } else if (name === 'links') {
       this._links = newValue;
+    } else if (name === 'pagebodycontent') {
+      this._pageBodyContent = newValue;
     }
+
     this.render();
   }
 
@@ -53,6 +67,22 @@ class PageLink extends HTMLElement {
     this.shadowRoot.appendChild(link);
   }
 
+  anchorClickHandler(event) {
+    // Prevent default anchor behavior
+    event.preventDefault();
+
+    // Get the target ID from the href attribute of the clicked anchor link
+    const targetId = event.target.getAttribute("href");
+
+    // Find the corresponding section on the page
+    const targetSection = this._pageBodyContent.shadowRoot.querySelector(targetId);
+
+    // Scroll the page to the target section
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
   render() {
     this.shadowRoot.innerHTML = '';
     this.loadStyles();
@@ -62,18 +92,21 @@ class PageLink extends HTMLElement {
             <h3>${this._header}</h3>
             <ol>
               ${this._links?.length ? JSON.parse(this._links).map((link, index) => {
-                return `
+      return `
                   <div class="item">
-                    <span>${index+1}</span>
+                    <span>${index + 1}</span>
                     <a href="${link.link}" class="sidebar-link">${link.linktext}</a>
                   </div>
                 `
-              }).join('') : ''
-              }
+    }).join('') : ''
+      }
             </ol>
           </div>
         `;
     this.shadowRoot.appendChild(template.content.cloneNode(true));
+
+    this.shadowRoot.querySelectorAll('a.sidebar-link')
+    .forEach(link => link.addEventListener('click', this.anchorClickHandler));
 
   }
 }

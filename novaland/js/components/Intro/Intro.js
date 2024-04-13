@@ -31,8 +31,8 @@ class Intro extends HTMLElement {
 
   connectedCallback() {
     // This is called when the element is inserted into the DOM
-    this._textheader = this.getAttribute('textheader');
-    this._textbody = this.getAttribute('textbody');
+    this._textheader = this.getAttribute('textheader') || '';
+    this._textbody = this.getAttribute('textbody') || '';
     this.render();
   }
 

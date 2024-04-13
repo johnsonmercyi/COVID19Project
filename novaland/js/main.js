@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
     }, {
       menuImage: "./img/protect yourself.svg",
       menuText: "Protect Yourself",
-      menuLink: "#"
+      menuLink: "./protect-yourself.html"
     }, {
       menuImage: "./img/symptomsAndTest.svg",
       menuText: "Symptom & Test",
