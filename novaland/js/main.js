@@ -34,19 +34,20 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
   function initialize() {
 
+    const gridItem = document.createElement("div");
     menus.forEach(menu => {
       const menuNode = document.createElement("nova-menu");
       menuNode.menuImage = menu.menuImage;
       menuNode.menuText = menu.menuText;
       menuNode.menuLink = menu.menuLink;
 
-      const gridItem = document.createElement("div");
       gridItem.classList.add("grid-item");
 
       gridItem.appendChild(menuNode);
-
-      main.appendChild(gridItem);
+      
     });
+
+    main.appendChild(gridItem);
   }
 
 

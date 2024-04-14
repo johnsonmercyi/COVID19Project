@@ -3,16 +3,12 @@
 }
 
 main.grid-container {
-  width : 100%;  
-  height: auto;
-  max-width: 1280px;
+  width       : 100%;
+  height      : auto;
 
-  display        : flex;
-  flex-direction : row;
-  flex-wrap      : wrap;
-  justify-content: space-around;
-  align-items    : center;
-  gap            : 20px;
+  display              : grid;
+  grid-template-columns: 1fr;
+  gap                  : 10px;
 
   padding: 5rem 0;
 
@@ -20,18 +16,13 @@ main.grid-container {
 }
 
 .grid-item {
-  flex            : 0 0 calc(100% - 100px);
-  max-width       : calc(100% - 20px);
-  box-sizing      : border-box;
-  /* border       : 1px solid #ccc; */
-  /* padding      : 16px; */
-  text-align      : left;
-  cursor          : pointer;
-  margin: 0;
+  text-align         : left;
+  cursor             : pointer;
+  margin             : auto;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display              : grid;
+  grid-template-columns: 1fr;
+  row-gap: 10px;
 }
 
 .footer {
@@ -52,8 +43,9 @@ main.grid-container {
   height: 2rem;
   margin: 0.5rem;
 }
+
 .footer .nova-footer:last-child .footer-social-icon img {
-  height: 2.6rem;
+  height   : 2.6rem;
   transform: translateY(-13%);
 }
 
@@ -64,8 +56,8 @@ main.grid-container {
   }
 
   .grid-item {
-    flex     : 0 0 calc(50% - 100px);
-    max-width: calc(50% - 20px);
+    grid-template-columns: repeat(2, 1fr);
+    gap : 30px;
   }
 }
 
@@ -75,7 +67,7 @@ main.grid-container {
   }
 
   .grid-item {
-    flex     : 0 0 calc(33.33% - 100px);
-    max-width: calc(33.33% - 20px);
+    grid-template-columns: repeat(3, 1fr);
+    gap : 50px;
   }
 }
