@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(e) {
   const main = document.querySelector("main");
-  // const footer = document.querySelector("footer");
-  // const novaFooter = document.querySelector("nova-footer");  
 
   const menus = [
     {
@@ -15,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
     }, {
       menuImage: "./img/symptomsAndTest.svg",
       menuText: "Symptom & Test",
-      menuLink: "#"
+      menuLink: "./symptom-and-test.html"
     }, {
       menuImage: "./img/alertAndNews.svg",
       menuText: "Alert & News",
@@ -23,11 +21,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
     }, {
       menuImage: "./img/mentalHealthAndWellbeing.svg",
       menuText: "Mental Health & Wellbeing",
-      menuLink: "#"
+      menuLink: "./mental-wellbeing.html"
     }, {
       menuImage: "./img/travelGuideLines.svg",
       menuText: "Travelling Guide",
-      menuLink: "#"
+      menuLink: "./travel-guide.html"
     }
   ];
 

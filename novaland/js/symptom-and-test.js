@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
   const bookAppointmentBtn = bodyButton.shadowRoot.querySelector('button');
 
   function initComponent() {
-    intro.textheader = `Lorem ipsum dolor sit.`;
-    intro.textbody = `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.`;
+    intro.textheader = `Coronavirus (COVID-19): symptoms, testing and self-isolating`;
+    intro.textbody = `Symptoms, who can be tested and how to self-isolate.`;
 
     sidebar.link = JSON.stringify(sidebarMenu);
-    sidebar.header = "Maecenas porttitor congue";
+    sidebar.header = "Government's response to COVID-19";
 
     pageLink.header = "On This Page";
     pageLink.links = JSON.stringify(onThisPageLoad.symptomandtest);
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
   initComponent();
 
   bookAppointmentBtn && bookAppointmentBtn.addEventListener("click", () => {
-    alert("You've successfully booked an appointment!");
+    window.location.href = "test-appointment.html";
   });
 
 });

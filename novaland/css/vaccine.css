@@ -24,7 +24,7 @@ div.section div {
 
   display        : flex;
   flex-direction : column;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 div.section.section-2 div.book-appointment-wrapper {

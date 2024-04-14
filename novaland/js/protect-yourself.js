@@ -9,11 +9,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 
   function initComponent() {
-    intro.textheader = `Lorem ipsum dolor sit.`;
-    intro.textbody = `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.`;
+    intro.textheader = "Coronavirus (COVID-19): protect yourself and others";
+    intro.textbody = `How to protect yourself and others from COVID-19. Steps you can take to stay safe, help prevent the spread of COVID-19 and protect your community.`;
 
     sidebar.link = JSON.stringify(sidebarMenu);
-    sidebar.header = "Maecenas porttitor congue";
+    sidebar.header = "Government's response to COVID-19";
 
     
     // Automatically generate IDs and their values for the body content sections (divs)

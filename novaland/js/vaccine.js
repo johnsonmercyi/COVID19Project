@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
   const bookAppointmentBtn = bodyButton.shadowRoot.querySelector('button');
 
   function initComponent() {
-    intro.textheader = `Lorem ipsum dolor sit.`;
-    intro.textbody = `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.`;
+    intro.textheader = `Coronavirus (COVID-19): Vaccine`;
+    intro.textbody = `Updated COVID-19 vaccines have been approved by Health NovaLand and are available for use. COVID-19 vaccination reduces the risk of severe illness, death and post COVID-19 condition (long COVID).`;
 
     sidebar.link = JSON.stringify(sidebarMenu);
-    sidebar.header = "Maecenas porttitor congue";
+    sidebar.header = "Government's response to COVID-19";
 
     // Automatically generate IDs and their values for the body content sections (divs)
     pagesSubTopics.vaccine.forEach((topic, index) => {
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
   initComponent();
 
   bookAppointmentBtn && bookAppointmentBtn.addEventListener("click", () => {
-    alert("You've successfully booked an appointment!");
+    window.location.href = "vaccine-appointment.html";
   });
 
 });
