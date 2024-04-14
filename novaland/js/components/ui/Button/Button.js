@@ -80,9 +80,11 @@ class Button extends HTMLElement {
           background-color: ${getDarkerColor(hexToHSL(this._bgcolor))};
         }
       </style>
-      <button>
-        ${String(this._text).toUpperCase()}
-      </button>
+      <div class="button-wrapper">
+        <button>
+          ${String(this._text).toUpperCase()}
+        </button>
+      </div>
     `;
 
     this.shadowRoot.appendChild(template.content.cloneNode(true));

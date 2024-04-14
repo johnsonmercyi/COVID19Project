@@ -51,3 +51,31 @@ export const getDarkerColor = (hslColor) => {
   const [h, s, l] = hslColor.match(/\d+/g).map(Number);
   return `hsl(${h}, ${s}%, ${Math.max(l - 5, 0)}%)`;
 };
+
+export const generatePageSubtopicsIDs = (pageSubtopics) => {
+  // Automatically generate IDs and their values for the body content sections (divs)
+  pageSubtopics.forEach((topic, index) => {
+    const header = pageSubtopics[index].header;
+    pageSubtopics[index].id = `${String(header).toLowerCase().replaceAll(" ", "-")}`;
+  });
+  
+  return pageSubtopics;
+}
+
+export const generatePageLinkValues = (pageSubtopics, pageLinks) => {
+  // Automatically generate link values using the IDs in the body content sections
+  pageSubtopics.forEach((obj, index) => {
+    pageLinks[index].link = `#${obj.id}`;
+  });
+
+  return pageLinks;
+}
+
+export function initPageLinksAndSubtopicIds (pageSubtopics, pageLinks) {
+  const topics = generatePageSubtopicsIDs(pageSubtopics);
+  const links = generatePageLinkValues(topics, pageLinks);
+  return {
+    subTopics: topics,
+    pageLinks: links
+  }
+}

@@ -255,7 +255,7 @@ export const pagesSubTopics = {
 export const guideline = {
   testAppointments: [  
     {
-      image: "./img/guideline.png",
+      image: "./img/beforeStart.svg",
       title: "Before you start",
       content: [
         {
@@ -266,7 +266,7 @@ export const guideline = {
       ] 
     },
     {
-      image: "./img/guideline.png",
+      image: "./img/afterStart.svg",
       title: "After you book this appointment",
       content: [
         {
@@ -277,7 +277,7 @@ export const guideline = {
   ],
   vaccineAppointments: [  
     {
-      image: "./img/guideline.png",
+      image: "./img/beforeStart.svg",
       title: "Before you start",
       content: [
         {
@@ -288,7 +288,7 @@ export const guideline = {
       ] 
     },
     {
-      image: "./img/guideline.png",
+      image: "./img/afterStart.svg",
       title: "After you book this appointment",
       content: [
         {

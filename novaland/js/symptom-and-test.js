@@ -1,4 +1,5 @@
 import { onThisPageLoad, pagesSubTopics, sidebarMenu } from "./config/nova-settings.mjs";
+import { initPageLinksAndSubtopicIds } from "./config/utility.mjs";
 
 document.addEventListener("DOMContentLoaded", function (e) {
 
@@ -16,10 +17,20 @@ document.addEventListener("DOMContentLoaded", function (e) {
     sidebar.link = JSON.stringify(sidebarMenu);
     sidebar.header = "Government's response to COVID-19";
 
-    pageLink.header = "On This Page";
-    pageLink.links = JSON.stringify(onThisPageLoad.symptomandtest);
+    /**
+     * Generate body content section IDs and 
+     * Initialize page links element with link values.
+     */
+    const pageInitData = initPageLinksAndSubtopicIds (
+      pagesSubTopics.symptomandtest,
+      onThisPageLoad.symptomandtest
+    );
 
-    bodyContent.subtopics = JSON.stringify(pagesSubTopics.symptomandtest);
+    pageLink.header = "On This Page";
+    pageLink.links = JSON.stringify(pageInitData.pageLinks);
+
+    bodyContent.subtopics = JSON.stringify(pageInitData.subTopics);
+    pageLink.pagebodycontent = bodyContent;
   }
 
   // Initialize this component

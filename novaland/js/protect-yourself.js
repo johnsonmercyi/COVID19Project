@@ -1,4 +1,5 @@
 import { onThisPageLoad, pagesSubTopics, sidebarMenu } from "./config/nova-settings.mjs";
+import { initPageLinksAndSubtopicIds } from "./config/utility.mjs";
 
 document.addEventListener("DOMContentLoaded", function (e) {
 
@@ -16,21 +17,19 @@ document.addEventListener("DOMContentLoaded", function (e) {
     sidebar.header = "Government's response to COVID-19";
 
     
-    // Automatically generate IDs and their values for the body content sections (divs)
-    pagesSubTopics.protectyourself.forEach((topic, index) => {
-      const header = pagesSubTopics.protectyourself[index].header;
-      pagesSubTopics.protectyourself[index].id = `${String(header).toLowerCase().replaceAll(" ", "-")}`;
-    });
-
-    // Automatically generate link values using the IDs in the body content sections
-    pagesSubTopics.protectyourself.forEach((obj, index) => {
-      onThisPageLoad.protectyourself[index].link = `#${obj.id}`;
-    });
+    /**
+    * Generate body content section IDs and 
+    * Initialize page links element with link values.
+    */
+    const pageInitData = initPageLinksAndSubtopicIds(
+      pagesSubTopics.protectyourself,
+      onThisPageLoad.protectyourself
+    );
 
     pageLink.header = "On This Page";
-    pageLink.links = JSON.stringify(onThisPageLoad.protectyourself);
+    pageLink.links = JSON.stringify(pageInitData.pageLinks);
     
-    bodyContent.subtopics = JSON.stringify(pagesSubTopics.protectyourself);
+    bodyContent.subtopics = JSON.stringify(pageInitData.subTopics);
     pageLink.pagebodycontent = bodyContent;
   }
 

@@ -1,4 +1,5 @@
-import { onThisPageLoad, pagesSubTopics, sidebarMenu} from "./config/nova-settings.mjs";
+import { onThisPageLoad, pagesSubTopics, sidebarMenu } from "./config/nova-settings.mjs";
+import { initPageLinksAndSubtopicIds } from "./config/utility.mjs";
 
 document.addEventListener("DOMContentLoaded", function (e) {
 
@@ -15,21 +16,23 @@ document.addEventListener("DOMContentLoaded", function (e) {
     sidebar.link = JSON.stringify(sidebarMenu);
     sidebar.header = "Government's response to COVID-19";
 
-    // Automatically generate IDs and their values for the body content sections (divs)
-    pagesSubTopics.vaccine.forEach((topic, index) => {
-      const header = pagesSubTopics.vaccine[index].header;
-      pagesSubTopics.vaccine[index].id = `${String(header).toLowerCase().replaceAll(" ", "-")}`;
-    });
-
-    // Automatically generate link values using the IDs in the body content sections
-    pagesSubTopics.vaccine.forEach((obj, index) => {
-      onThisPageLoad.vaccine[index].link = `#${obj.id}`;
-    });
+    /**
+     * Generate body content section IDs and 
+     * Initialize page links element with link values.
+     */
+    const pageInitData = initPageLinksAndSubtopicIds(
+      pagesSubTopics.mentalhealth,
+      onThisPageLoad.mentalhealth
+    );
 
     pageLink.header = "On This Page";
-    pageLink.links = JSON.stringify(onThisPageLoad.mentalhealth);
+    pageLink.links = JSON.stringify(pageInitData.pageLinks);
 
-    bodyContent.subtopics = JSON.stringify(pagesSubTopics.mentalhealth);
+    bodyContent.subtopics = JSON.stringify(pageInitData.subTopics);
+
+    // Assign the page body content to the pagelink element for appropriate scroll to view action
+    pageLink.pagebodycontent = bodyContent;
+
     warningContent.icon = `../../img/warning.svg`;
     warningContent.text = `If this is an emergency, or if you or someone you know is in immediate danger, call the Provincial Mental Health and Addictions Crisis Line toll-free at 1-865-432-800 or call 911. Or go to your nearest hospital or emergency department.`;
   }
