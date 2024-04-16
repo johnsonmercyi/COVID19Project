@@ -131,7 +131,9 @@ class TextField extends HTMLElement {
       <style>
         .input-field-wrapper input[type="date"]::before,
         .input-field-wrapper input[type="time"]::before {
-          content   : '${this._placeholder}';
+          content   : '${!this._value ? this._placeholder : ""}';
+          width: ${!this._value ? 100 : 0}%;
+          background: ${!this._value ? "white" : "none"};
         }
       </style>
       <div class="input-field-wrapper">
@@ -149,6 +151,12 @@ class TextField extends HTMLElement {
     `;
 
     this.shadowRoot.appendChild(template.content.cloneNode(true));
+
+    this.shadowRoot.querySelector('.input-field-wrapper input').addEventListener('input', (e)=> {
+      // const [hours, minutes] = e.target.value.split(':');
+      // console.log("Changed: ", hours, minutes);
+      this.value =  e.target.value;
+    });
   }
 }
 
