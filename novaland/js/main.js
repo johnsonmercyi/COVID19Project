@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
     }, {
       menuImage: "./img/alertAndNews.svg",
       menuText: "Alert & News",
-      menuLink: "#"
+      menuLink: "./alert-and-news.html"
     }, {
       menuImage: "./img/mentalHealthAndWellbeing.svg",
       menuText: "Mental Health & Wellbeing",
