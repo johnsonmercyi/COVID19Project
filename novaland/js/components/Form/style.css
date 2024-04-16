@@ -41,7 +41,8 @@
   }
 
   .form .main {
-    width: 80%;
+    width: 87%;
+    max-width: 80rem;
     grid-template-columns: repeat(2, 1fr);
   }
 }

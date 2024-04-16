@@ -128,6 +128,12 @@ class TextField extends HTMLElement {
     this.loadStyles();
     const template = document.createElement('template');
     template.innerHTML = `
+      <style>
+        .input-field-wrapper input[type="date"]::before,
+        .input-field-wrapper input[type="time"]::before {
+          content   : '${this._placeholder}';
+        }
+      </style>
       <div class="input-field-wrapper">
         ${
           this._showlabel ? 
@@ -135,12 +141,12 @@ class TextField extends HTMLElement {
         }
         
         <input
+          name="${this._name}"
           type="${this._type}"
           placeholder="${this._placeholder}" 
           value="${this._value}"/>
       </div>
     `;
-
 
     this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
