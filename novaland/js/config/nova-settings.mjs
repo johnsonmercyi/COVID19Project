@@ -92,6 +92,20 @@ export const onThisPageLoad = {
     }
      
   ],
+  alertandnews: [ 
+    {
+      linktext: "Weekly Highlights",
+      link: "#"
+    },
+    {
+      linktext: "Latest COVID-19 numbers",
+      link: "#"
+    },
+    {
+      linktext: "COVID-19 activity levels",
+      link: "#"
+    }
+  ],
   mentalhealth: [
     {
       linktext: "Helplines",
@@ -187,6 +201,29 @@ export const pagesSubTopics = {
     }, {
       header: "How to self-isolate",
       body: "Most people don’t need to self-isolate. However, self-isolating means staying at home and avoiding contact with other people to help prevent the spread of COVID-19. Public Health recommends that you self-isolate if you have COVID-19 symptoms or have tested positive for COVID-19."
+    }
+  ],
+  alertandnews: [
+    {
+      header: "Weekly Highlights",
+      body: `<div class="weekly-highlights-body">
+              <span>xxxxxx xxxxxxxxxxxxxxxxxx xxxxxxxxx xxxxxxxx xxxxxxxxxxx</span>
+              <br/>
+              <h3>Subheader 1</h3>
+              <ul>
+                <li>xxxxxx xxxxxxxxxxxxxxxxxx xxxxxxxxx xxxxxxxx xxxxxxxxxxx</li>
+              </ul>
+              <br/>
+              <h3>Subheader 2</h3>
+              <ul>
+                <li>xxxxxx xxxxxxxxxxxxxxxxxx xxxxxxxxx xxxxxxxx xxxxxxxxxxx</li>
+              </ul>
+              <br/>
+              <h3>Subheader 3</h3>
+              <ul>
+                <li>xxxxxx xxxxxxxxxxxxxxxxxx xxxxxxxxx xxxxxxxx xxxxxxxxxxx</li>
+              </ul>
+            </div>`
     }
   ],
   mentalhealth: [
