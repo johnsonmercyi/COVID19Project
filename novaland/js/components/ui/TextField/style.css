@@ -59,6 +59,18 @@
   content: '';
 }
 
+.input-field-wrapper input.error {
+  border-color: rgb(255, 24, 59);
+}
+
+.error-message {
+  width: 100%;
+  height: auto;
+  padding: 0.15rem;
+  color: rgb(255, 24, 59);
+  font-size: 0.8rem;
+}
+
 
 
 

@@ -11,6 +11,8 @@ class TextField extends HTMLElement {
     this._label = "Label";
     this._showlabel = "true";
     this._stylesheet = "./js/components/ui/TextField/style.css";
+    this._error = "false";
+    this._errorMessage = "Error message here...";
 
     // this.onInputHandler = this.onInputHandler.bind(this);
   }
@@ -23,7 +25,7 @@ class TextField extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['placeholder', 'value', 'name', 'type', 'label', 'showlabel', 'stylesheet'];
+    return ['placeholder', 'value', 'name', 'type', 'label', 'showlabel', 'stylesheet', 'error', 'errormessage'];
   }
 
   connectedCallback() {
@@ -35,6 +37,9 @@ class TextField extends HTMLElement {
     const showLabel = this.getAttribute('showlabel') || this._showlabel;
     this._showlabel = showLabel !== 'false';
     this._stylesheet = this.getAttribute('stylesheet') || this._stylesheet;
+    const error = this.getAttribute('error') || this._error;
+    this._error = error !== 'false';
+    this._errorMessage = this.getAttribute('errormessage') || this._errorMessage;
     
     this.render();
   }
@@ -52,9 +57,13 @@ class TextField extends HTMLElement {
     } else if (name === "label") {
       this._label = newValue;
     } else if (name === "showlabel") {
-      this._showlabel = newValue;
+      this._showlabel = newValue !== 'false';
     } else if (name === "stylesheet") {
       this._stylesheet = newValue;
+    } else if (name === "error") {
+      this._error = newValue !== 'false';
+    } else if (name === "errormessage") {
+      this._errorMessage = newValue;
     }
 
     this.render();
@@ -65,7 +74,7 @@ class TextField extends HTMLElement {
   }
 
   set placeholder(value) {
-    this._placeholder = value;
+    // this._placeholder = value;
     this.setAttribute('placeholder', value);
   }
 
@@ -74,7 +83,7 @@ class TextField extends HTMLElement {
   }
 
   set value(value) {
-    this._value = value;
+    // this._value = value;
     this.setAttribute('value', value);
   }
 
@@ -83,7 +92,7 @@ class TextField extends HTMLElement {
   }
 
   set name(value) {
-    this._name = value;
+    // this._name = value;
     this.setAttribute('name', value);
   }
 
@@ -92,7 +101,7 @@ class TextField extends HTMLElement {
   }
 
   set type(value) {
-    this._type = value;
+    // this._type = value;
     this.setAttribute('type', value);
   }
 
@@ -101,7 +110,7 @@ class TextField extends HTMLElement {
   }
 
   set label(value) {
-    this._label = value;
+    // this._label = value;
     this.setAttribute('label', value);
   }
 
@@ -110,7 +119,7 @@ class TextField extends HTMLElement {
   }
 
   set showlabel(value) {
-    this._showlabel = value;
+    // this._showlabel = value !== 'false';
     this.setAttribute("showlabel", value);
   }
 
@@ -119,8 +128,26 @@ class TextField extends HTMLElement {
   }
 
   set stylesheet(value) {
-    this._stylesheet = value;
+    // this._stylesheet = value;
     this.setAttribute("stylesheet", value);
+  }
+
+  get error() {
+    return this._error;
+  }
+
+  set error(value) {
+    // this._error = value !== 'false';
+    this.setAttribute("error", value);
+  }
+
+  get errormessage() {
+    return this._errorMessage;
+  }
+
+  set errormessage(value) {
+    // this._errorMessage = value;
+    this.setAttribute("errormessage", value);
   }
 
   render() {
@@ -143,19 +170,43 @@ class TextField extends HTMLElement {
         }
         
         <input
+          class="${this._error ? 'error' : ''}"
           name="${this._name}"
           type="${this._type}"
           placeholder="${this._placeholder}" 
           value="${this._value}"/>
+        ${
+          this._error ? `
+            <span class="error-message">${this._errorMessage}</span>
+          ` : ''
+        }
       </div>
     `;
 
     this.shadowRoot.appendChild(template.content.cloneNode(true));
+    this.shadowRoot.querySelector('.input-field-wrapper input').addEventListener('input', (e) => {
+      this._value = e.target.value;
+      console.log(this._value);
 
-    this.shadowRoot.querySelector('.input-field-wrapper input').addEventListener('input', (e)=> {
-      // const [hours, minutes] = e.target.value.split(':');
-      // console.log("Changed: ", hours, minutes);
-      this.value =  e.target.value;
+      /**
+       * ⚠️This is not to be used.
+       * It's buggy. It needs a quiet rendering of component to execute as expected.
+       */
+      // if (this._value) {
+      //   this._error = 'false';
+      //   this._errorMessage = '';
+      //   console.log(this._error, this._errorMessage);
+      // }
+    });
+
+    this.shadowRoot.querySelector('.input-field-wrapper input[type="date"]')
+      && this.shadowRoot.querySelector('.input-field-wrapper input[type="date"]').addEventListener('input', (e) => {
+      this.value = e.target.value;
+    });
+
+    this.shadowRoot.querySelector('.input-field-wrapper input[type="time"]')
+      && this.shadowRoot.querySelector('.input-field-wrapper input[type="time"]').addEventListener('input', (e) => {
+      this.value = e.target.value;
     });
   }
 }

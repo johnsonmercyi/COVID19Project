@@ -7,16 +7,18 @@ class Button extends HTMLElement {
     this._stylesheet = './js/components/ui/Button/style.css';
     this._text = "Button text";
     this._bgcolor = "#009658";
+    this._type = 'button';
   }
 
   static get observedAttributes() {
-    return ['text', 'bgcolor'];
+    return ['stylesheet', 'text', 'bgcolor', 'type'];
   }
 
   connectedCallback() {
     this._stylesheet = this.getAttribute('stylesheet') || this._stylesheet;
     this._text = this.getAttribute('text') || this._text;
     this._bgcolor = this.getAttribute('bgcolor') || this._bgcolor;
+    this._type = this.getAttribute('type') || this._type;
     this.render();
   }
 
@@ -33,7 +35,9 @@ class Button extends HTMLElement {
     } else if (name === "text") {
       this._text = newValue;
     } else if (name === "bgcolor") {
-      this._bgcolor;
+      this._bgcolor = newValue;
+    } else if (name === "type") {
+      this._type = newValue;
     }
 
     this.render();
@@ -66,6 +70,15 @@ class Button extends HTMLElement {
     this.setAttribute('bgcolor', bgcolor);
   }
 
+  get type() {
+    this._type;
+  }
+
+  set type(value) {
+    this._type = value;
+    this.setAttribute('type', value);
+  }
+
   render() {
     this.shadowRoot.innerHTML = '';
     this.loadStyle();
@@ -81,7 +94,7 @@ class Button extends HTMLElement {
         }
       </style>
       <div class="button-wrapper">
-        <button>
+        <button type="${this._type}">
           ${String(this._text).toUpperCase()}
         </button>
       </div>

@@ -9,10 +9,12 @@ class Select extends HTMLElement {
     this._label = "Label";
     this._showlabel = "true";
     this._stylesheet = "./js/components/ui/Select/style.css";
+    this._error = "false";
+    this._errorMessage = "Error message here...";
   }
 
   static get observedAttributes() {
-    return ['options', 'placeholder', 'value', 'name', 'label', 'showlabel', 'stylesheet'];
+    return ['options', 'placeholder', 'value', 'name', 'label', 'showlabel', 'stylesheet', 'error', 'errormessage'];
   }
 
   connectedCallback() {
@@ -22,7 +24,10 @@ class Select extends HTMLElement {
     this._label = this.getAttribute('type') || this._label;
     const showLabel = this.getAttribute('showlabel') || this._showlabel;
     this._showlabel = showLabel !== 'false';
-    this._stylesheet = this.getAttribute('stylesheet') || this._stylesheet
+    this._stylesheet = this.getAttribute('stylesheet') || this._stylesheet;
+    const error = this.getAttribute('error') || this._error;
+    this._error = error !== 'false';
+    this._errorMessage = this.getAttribute('errormessage') || this._errorMessage;
     this.render();
   }
 
@@ -41,6 +46,10 @@ class Select extends HTMLElement {
       this._showlabel = newValue;
     } else if (name === 'stylesheet') {
       this._stylesheet = newValue;
+    } else if (name === "error") {
+      this._error = newValue !== 'false';
+    } else if (name === "errormessage") {
+      this._errorMessage = newValue;
     }
 
     this.render();
@@ -53,12 +62,19 @@ class Select extends HTMLElement {
     this.shadowRoot.appendChild(link);
   }
 
+  get options() {
+    return this._options;
+  }
+
+  set options(value) {
+    this.setAttribute('options', value);
+  }
+
   get placeholder() {
     return this._placeholder;
   }
 
   set placeholder(value) {
-    this._placeholder = value;
     this.setAttribute('placeholder', value);
   }
 
@@ -67,7 +83,7 @@ class Select extends HTMLElement {
   }
 
   set value(value) {
-    this._value = value;
+    this.setAttribute('value', value);
   }
 
   get name() {
@@ -75,7 +91,6 @@ class Select extends HTMLElement {
   }
 
   set name(value) {
-    this._name = value;
     this.setAttribute('name', value);
   }
 
@@ -84,7 +99,6 @@ class Select extends HTMLElement {
   }
 
   set label(value) {
-    this._label = value;
     this.setAttribute('label', value);
   }
 
@@ -93,7 +107,6 @@ class Select extends HTMLElement {
   }
 
   set showlabel(value) {
-    this._showlabel = value;
     this.setAttribute("showlabel", value);
   }
 
@@ -102,14 +115,30 @@ class Select extends HTMLElement {
   }
 
   set stylesheet(value) {
-    this._stylesheet = value;
     this.setAttribute("stylesheet", value);
+  }
+
+  get error() {
+    return this._error;
+  }
+
+  set error(value) {
+    this.setAttribute("error", value);
+  }
+
+  get errormessage() {
+    return this._errorMessage;
+  }
+
+  set errormessage(value) {
+    this.setAttribute("errormessage", value);
   }
 
   render() {
     this.shadowRoot.innerHTML = '';
     this.loadStyle();
     const options = JSON.parse(this._options);
+    console.log("OPTIONS: ", options, options.length);
     const template = document.createElement('template');
     template.innerHTML = `
       <div class="input-field-wrapper">
@@ -118,20 +147,30 @@ class Select extends HTMLElement {
           `<label>${this._label}</label>` : ''
         }
         <select
+          class="${this._error ? 'error' : ''}"
           name="${this._name}"
           placeholder="${this._placeholder}">
+          <option value="" selected>-- ${this._label} --</option>
 
           ${
-            options.length ? options.map(option => `
-              <option value="${option.value}">${option.label}</option
-            `).join(" ") 
-            : `<option value=''>${this._label}</option>`
+            options.length ? options.map(option =>`
+              <option value="${option.value}" ${this._value === option.value ? "selected" : ""}>${option.label}</option>
+            `).join(" ") : ``
           }
         </select>
+        ${
+          this._error ? `
+            <span class="error-message">${this._errorMessage}</span>
+          ` : ''
+        }
       </div>
     `;
 
     this.shadowRoot.appendChild(template.content.cloneNode(true));
+    this.shadowRoot.querySelector('.input-field-wrapper select')
+    .addEventListener('change', (event)=> {
+      this._value = event.target.value;
+    });
   }
 }
 

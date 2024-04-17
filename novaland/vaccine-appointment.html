@@ -40,53 +40,60 @@
       formtitle="Vaccination Appointment Form"
     >
       <nova-field
+        name="healthCardNumber"
         type="text"
         placeholder="Health card number"
         showlabel="false"
       ></nova-field>
 
       <nova-field
+        name="email"
         type="email"
         placeholder="Email"
         showlabel="false"
       ></nova-field>
 
       <nova-field
+        name="address"
         type="text"
         placeholder="Address"
         showlabel="false"
       ></nova-field>
 
-      <nova-select 
-        showlabel="false" 
+      <nova-select
+        name="vaccineType"
+        showlabel="false"
         label="Vaccine type"
       ></nova-select>
 
       <nova-field
+        name="dateOfBirth"
         type="date"
         placeholder="Date of birth"
         showlabel="false"
       ></nova-field>
 
-      <nova-select 
-        showlabel="false" 
+      <nova-select
+        name="vaccineLocation"
+        showlabel="false"
         label="Vaccine location"
       ></nova-select>
 
       <nova-field
+        name="availableDate"
         type="date"
         placeholder="Available date"
         showlabel="false"
       ></nova-field>
 
       <nova-field
+        name="availableTime"
         type="time"
-        placeholder="Available something"
+        placeholder="Available time"
         showlabel="false"
       ></nova-field>
 
-      <nova-button text="Submit"></nova-button>
-
+      <nova-button text="Submit" type="submit"></nova-button>
     </nova-form>
     <nova-footer copyright="Copyright &copy; NovaLand 2024"></nova-footer>
     <script type="module" src="./js/vaccine-appointment.js"></script>
