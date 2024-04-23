@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
   const statsCardCases = document.querySelector("stats-card.cases");
   const statsCardDeaths = document.querySelector("stats-card.death");
   const singleCardTest = document.querySelector("single-card.test");
-  const singleCardPercent = document.querySelector("single-card.positive-percent");
+  const singleCardPercent = document.querySelector("single-card.percentage-positive");
 
   function initComponent() {
     intro.textheader = `Coronavirus (COVID-19): Alert and News`;
@@ -38,18 +38,20 @@ document.addEventListener("DOMContentLoaded", function (e) {
     barChart.data = JSON.stringify(chartData);
     //statistic cards
     //cases
-    statsCardCases.statstitle = "Cases";
-    statsCardCases.weeklychangeno = "345";
-    statsCardCases.total = "4,589,111";
-    //deaths
-    statsCardDeaths.statstitle = "Deaths";
-    statsCardDeaths.weeklychangeno = "300";
-    statsCardDeaths.total = "549,011";
+    // statsCardCases.statstitle = "Cases";
+    // statsCardCases.weeklychangeno = "345";
+    // statsCardCases.total = "4,589,111";
+    // //deaths
+    // statsCardDeaths.statstitle = "Deaths";
+    // statsCardDeaths.weeklychangeno = "300";
+    // statsCardDeaths.total = "549,011";
     //single card
     singleCardTest.title = "Test";
     singleCardTest.value = "345,200";
-    singleCardPercent.title = " Percentage Positive";
-    singleCardPercent.value = "24.5%";
+
+    console.log(singleCardTest);
+    // singleCardPercent.title = " Percentage Positive";
+    // singleCardPercent.value = "24.5%";
   }
 
   // Initialize this component
