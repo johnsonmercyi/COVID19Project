@@ -341,7 +341,7 @@ export const chartData = {
     { level: 25, label: "Nigeria" },
     { level: 100, label: "United Stateds" },
     { level: 50, label: "Canada" },
-    { level: 25, label: "United Kingdom" },
+    { level: 90, label: "United Kingdom" },
     { level: 75, label: "Ghana" },
   ], ruler: {
     labels: [
